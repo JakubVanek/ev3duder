@@ -71,6 +71,12 @@ extern int bootloader_enter(void);
 //! install new firmware to the brick
 extern int bootloader_install(FILE *fp);
 
+//! Returns the number of sectors in the flash device.
+extern u32 getNumFlashSectors();
+
+//! compare device CRC to CRC from a file
+extern int bootloader_crc(FILE *fp, u32 starting_sector, u32 num_sectors, bool verbose);
+
 //! print brick hardware version
 extern int bootloader_info(void);
 
